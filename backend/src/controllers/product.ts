@@ -22,10 +22,10 @@ export const createProduct = async (
   next: NextFunction
 ) => {
   try {
-    const { title, price } = req.body;
+    const { title, price, description, image, category } = req.body;
 
-    if (!title || !price) {
-      throw new BadRequestError("Title and price are required");
+    if (!title || !price || !description || !image || !category) {
+      throw new BadRequestError("All fields are required");
     }
 
     const existingProduct = await Product.findOne({ title });
@@ -34,7 +34,7 @@ export const createProduct = async (
       throw new ConflictError("Product with this title already exists");
     }
 
-    const product = new Product({ title, price });
+    const product = new Product({ title, price, description, image, category });
     await product.save();
 
     res.status(201).json(product);
