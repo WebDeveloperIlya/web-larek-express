@@ -6,11 +6,11 @@
   "scripts": {
     "lint": "npx eslint src/**/*.ts",
     "build": "tsc",
-    "dev": "npx nodemon -L src/app.ts ",
+    "dev": "npx nodemon -L src/app.ts",
     "start": "ts-node src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "< Укажите здесь автора работы >",
+  "author": "< Ковельский Илья >",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.21",
@@ -30,5 +30,6 @@
     "mongoose": "^8.3.2",
     "validator": "^13.11.0",
     "celebrate": "^15.0.0",
+    "dotenv": "^16.3.1"
   }
 }
